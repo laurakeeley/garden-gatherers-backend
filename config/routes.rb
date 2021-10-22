@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   post "/categories" => "categories#create"
   get "/categories/:id" => "categories#show"
 
+  #POSTS
+  get "/posts" => "posts#index"
+  post "/posts" => "posts#create"
+
   #Sessions
   post "/sessions" => "sessions#create"
 end

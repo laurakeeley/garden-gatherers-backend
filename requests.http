@@ -37,12 +37,26 @@ Content-Type: application/json
 ###CATEGORY SHOW
 GET http://localhost:3000/categories/1
 
+###POSTS INDEX
+GET http://localhost:3000/posts
+
+###POSTS CREATE
+POST http://localhost:3000/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTIwOTV9.D-_TR0FciEBAXtoJ0E_JMyofTczQddXZf7PYZ26lKUE
+
+{
+  "title": "test title",
+  "body": "test body",
+  "image_url": "image.jpeg",
+  "category_id": 2
+}
 ### Sessions create (login)
 
-  POST http://localhost:3000/sessions
-  Content-Type: application/json
+POST http://localhost:3000/sessions
+Content-Type: application/json
 
-  {
-    "email": "test@test.com",
-    "password": "password"
-  }
+{
+  "email": "laura@gmail.com",
+  "password": "password"
+}
