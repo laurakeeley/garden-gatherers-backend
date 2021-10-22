@@ -21,6 +21,13 @@ Rails.application.routes.draw do
   patch "/comments/:id" => "comments#update"
   delete "/comments/:id" => "comments#destroy"
 
+  #MEETUPS
+  get "/meetups" => "meetups#index"
+  post "/meetups" => "meetups#create"
+  get "/meetups/:id" => "meetups#show"
+  patch "/meetups/:id" => "meetups#update"
+  delete "/meetups/:id" => "meetups#destroy"
+
   #Sessions
   post "/sessions" => "sessions#create"
 end
