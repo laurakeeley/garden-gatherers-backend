@@ -26,6 +26,16 @@ Content-Type: application/json
 ###USER DESTROY
 DELETE http://localhost:3000/users/1
 
+###CATEGORY CREATE
+POST http://localhost:3000/categories
+Content-Type: application/json
+
+{
+  "name": "Test Category"
+}
+
+###CATEGORY SHOW
+GET http://localhost:3000/categories/1
 
 ### Sessions create (login)
 

@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   patch "/users/:id" => "users#update"
   delete "/users/:id" => "users#destroy"
 
+  #CATEGORIES
+  post "/categories" => "categories#create"
+  get "/categories/:id" => "categories#show"
+
   #Sessions
   post "/sessions" => "sessions#create"
 end
