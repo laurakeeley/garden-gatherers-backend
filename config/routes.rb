@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   #POSTS
   get "/posts" => "posts#index"
   post "/posts" => "posts#create"
-
+  get "/posts/:id" => "posts#show"
+  patch "/posts/:id"=> "posts#update"
   #Sessions
   post "/sessions" => "sessions#create"
 end

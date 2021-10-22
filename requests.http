@@ -51,6 +51,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTIwO
   "image_url": "image.jpeg",
   "category_id": 2
 }
+
+###POSTS SHOW
+GET http://localhost:3000/posts/2
+
+###POSTS UPDATE
+PATCH http://localhost:3000/posts/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTIwOTV9.D-_TR0FciEBAXtoJ0E_JMyofTczQddXZf7PYZ26lKUE
+
+{
+  "title": "update test",
+  "body": "update test"
+}
+
 ### Sessions create (login)
 
 POST http://localhost:3000/sessions
