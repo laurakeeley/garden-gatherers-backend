@@ -75,7 +75,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTIwOTV9.D-_TR0FciEBAXtoJ0E_JMyofTczQddXZf7PYZ26lKUE
 
 {
-  "body": "test body",
+  "body": "comment comment comment",
   "image_url": "image.jpeg",
   "post_id": 1
 }
