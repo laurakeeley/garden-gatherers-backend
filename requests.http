@@ -12,10 +12,10 @@ Content-Type: application/json
 }
 
 ###USER SHOW
-GET http://localhost:3000/users/1
+GET http://localhost:3000/users/3
 
 ###USER UPDATE
-PATCH http://localhost:3000/users/1
+PATCH http://localhost:3000/users/3
 Content-Type: application/json
 
 {
