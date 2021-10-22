@@ -53,7 +53,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTIwO
 }
 
 ###POSTS SHOW
-GET http://localhost:3000/posts/2
+GET http://localhost:3000/posts/1
 
 ###POSTS UPDATE
 PATCH http://localhost:3000/posts/2
@@ -64,6 +64,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTIwO
   "title": "update test",
   "body": "update test"
 }
+
+###POSTS DESTROY
+DELETE http://localhost:3000/posts/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTIwOTV9.D-_TR0FciEBAXtoJ0E_JMyofTczQddXZf7PYZ26lKUE
 
 ### Sessions create (login)
 
