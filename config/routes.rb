@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   get "/posts/:id" => "posts#show"
   patch "/posts/:id" => "posts#update"
   delete "/posts/:id" => "posts#destroy"
+
+  #COMMENTS
+  post "/comments" => "comments#create"
+  patch "/comments/:id" => "comments#update"
+  delete "/comments/:id" => "comments#destroy"
+
   #Sessions
   post "/sessions" => "sessions#create"
 end

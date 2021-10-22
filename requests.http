@@ -69,12 +69,37 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTIwO
 DELETE http://localhost:3000/posts/2
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTIwOTV9.D-_TR0FciEBAXtoJ0E_JMyofTczQddXZf7PYZ26lKUE
 
+###COMMENTS CREATE
+POST http://localhost:3000/comments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTIwOTV9.D-_TR0FciEBAXtoJ0E_JMyofTczQddXZf7PYZ26lKUE
+
+{
+  "body": "test body",
+  "image_url": "image.jpeg",
+  "post_id": 1
+}
+
+###COMMENTS UPDATE
+PATCH http://localhost:3000/comments/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUwMTIwOTV9.D-_TR0FciEBAXtoJ0E_JMyofTczQddXZf7PYZ26lKUE
+
+{
+  "body": "update comment test"
+}
+
+###DELETE COMMENT
+DELETE http://localhost:3000/comments/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUwMTU0MjN9.M-xx-ey8OFKHar8Q_JaF-zaCd3jV2N_7nGT1381oa5w
+
+
 ### Sessions create (login)
 
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "laura@gmail.com",
+  "email": "zia@gmail.com",
   "password": "password"
 }
