@@ -1,13 +1,31 @@
 ### Users create (signup)
-  POST http://localhost:3000/users
-  Content-Type: application/json
+POST http://localhost:3000/users
+Content-Type: application/json
 
-  {
-    "name": "Test name",
-    "email": "test@test.com",
-    "password": "password",
-    "password_confirmation": "password"
-  }
+{
+  "name": "test",
+  "email": "test@gmail.com",
+  "locaiton": "East Hill",
+  "password": "password",
+  "password_confirmation": "password",
+  "image_url": "https://www.istockphoto.com/photo/surprised-baby-girl-wearing-heart-shaped-glasses-gm1294927798-388798069?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fgirl&utm_term=girl%3A%3Asearch-aggressive-affiliates-v1%3Ab"
+}
+
+###USER SHOW
+GET http://localhost:3000/users/1
+
+###USER UPDATE
+PATCH http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+  "name": "Zia",
+  "email": "zia@gmail.com"
+}
+
+###USER DESTROY
+DELETE http://localhost:3000/users/1
+
 
 ### Sessions create (login)
 
