@@ -1,30 +1,42 @@
-### Users create (signup)
+### SESSION CREATE
+
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "laura@gmail.com",
+  "password": "password"
+}
+
+### USER CREATE
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
   "name": "test",
   "email": "test@gmail.com",
-  "locaiton": "East Hill",
+  "location": "test location",
   "password": "password",
   "password_confirmation": "password",
-  "image_url": "https://www.istockphoto.com/photo/surprised-baby-girl-wearing-heart-shaped-glasses-gm1294927798-388798069?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fgirl&utm_term=girl%3A%3Asearch-aggressive-affiliates-v1%3Ab"
+  "image_url": "testphoto.jpg"
 }
 
 ###USER SHOW
 GET http://localhost:3000/users/3
 
 ###USER UPDATE
-PATCH http://localhost:3000/users/3
+PATCH http://localhost:3000/users/6
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUxMTU2ODR9.DSbaBDrxGVgaRnEk7NCD5hp8gz_XvgyCazPgb4yi-Nw
 
 {
-  "name": "Zia",
-  "email": "zia@gmail.com"
+  "name": "test update",
+  "location": "south side"
 }
 
 ###USER DESTROY
-DELETE http://localhost:3000/users/1
+DELETE http://localhost:3000/users/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MzUxMTU1MjJ9.9ys6XmNgu_mHomNzIK4Apwr_SlGr90abO3Rdwva-QFM
 
 ###CATEGORY CREATE
 POST http://localhost:3000/categories
@@ -43,22 +55,22 @@ GET http://localhost:3000/posts
 ###POSTS CREATE
 POST http://localhost:3000/posts
 Content-Type: application/json
-Authorization: 
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUxMTU2ODR9.DSbaBDrxGVgaRnEk7NCD5hp8gz_XvgyCazPgb4yi-Nw
 
 {
   "title": "test title",
   "body": "test body",
   "image_url": "image.jpeg",
-  "category_id": 2
+  "category_id": 1
 }
 
 ###POSTS SHOW
 GET http://localhost:3000/posts/1
 
 ###POSTS UPDATE
-PATCH http://localhost:3000/posts/2
+PATCH http://localhost:3000/posts/6
 Content-Type: application/json
-Authorization: 
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUxMTU2ODR9.DSbaBDrxGVgaRnEk7NCD5hp8gz_XvgyCazPgb4yi-Nw
 
 {
   "title": "update test",
@@ -66,8 +78,8 @@ Authorization:
 }
 
 ###POSTS DESTROY
-DELETE http://localhost:3000/posts/2
-Authorization: Bearer 
+DELETE http://localhost:3000/posts/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MzUxMTU1MjJ9.9ys6XmNgu_mHomNzIK4Apwr_SlGr90abO3Rdwva-QFM
 
 ###COMMENTS CREATE
 POST http://localhost:3000/comments
@@ -81,17 +93,18 @@ Authorization: Bearer
 }
 
 ###COMMENTS UPDATE
-PATCH http://localhost:3000/comments/2
+PATCH http://localhost:3000/comments/4
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUxMTYyMjl9.5Qw_qSAC8cKKVrVarOQsOzN-Nv_K33lcelTJOWoA4JA
 
 {
-  "body": "update comment test"
+  "body": "update comment test",
+  "image_url": "testimageupdate.jpg"
 }
 
 ###DELETE COMMENT
-DELETE http://localhost:3000/comments/2
-Authorization: Bearer 
+DELETE http://localhost:3000/comments/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUxMTYyMjl9.5Qw_qSAC8cKKVrVarOQsOzN-Nv_K33lcelTJOWoA4JA
 
 ###MEETUP INDEX
 GET http://localhost:3000/meetups
@@ -124,12 +137,3 @@ Authorization: Bearer
 DELETE http://localhost:3000/meetups/2
 Authorization: Bearer 
 
-### Sessions create (login)
-
-POST http://localhost:3000/sessions
-Content-Type: application/json
-
-{
-  "email": "zia@gmail.com",
-  "password": "password"
-}

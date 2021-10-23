@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     post.body = params[:body] || post.body
     post.image_url = params[:image_url] || post.image_url
 
-    if post.save
+    if post.user_id == current_user.id && post.save
       render json: post
     else
       render json: {errors: post.errors.full_messages}, status: :unprocessable_entity
@@ -48,8 +48,12 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
-    post.destroy
-    render json: {message: "Post successfully destroyed."}
+    if post.user_id == current_user.id
+      post.destroy
+      render json: {message: "Post successfully destroyed."}
+    else
+      render json: {message: "Cannot delete post that isn't yours."}
+    end
   end
 
 end

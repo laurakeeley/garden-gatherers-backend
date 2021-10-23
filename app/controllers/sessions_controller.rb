@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       )
       render json: { jwt: jwt, email: user.email, user_id: user.id }, status: :created
     else
-      render json: {}, status: :unauthorized
+      render json: {message: "Invalid Email or Password"}, status: :unauthorized
     end
   end
 

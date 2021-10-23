@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     comment.body = params[:body] || comment.body
     comment.image_url = params[:image_url] || comment.image_url
 
-    if comment.save
+    if comment.user_id == current_user.id && comment.save
       render json: comment
     else
       render json: {errors: comment.errors.full_messages}, status: :unprocessable_entity
@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
 
   def destroy
     comment = Comment.find(params[:id])
-    if comment.destroy
+    if comment.user_id == current_user.id && comment.destroy
       render json: {message: "comment successfully destroyed."}
     else
       render json: {errors: comment.errors.full_messages}, status: :unprocessable_entity

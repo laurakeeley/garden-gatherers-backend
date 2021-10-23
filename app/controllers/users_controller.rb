@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :authenticate_user, except: [:create]
+
   def create
     user = User.new(
       name: params[:name],
@@ -30,7 +32,7 @@ class UsersController < ApplicationController
     user.location = params[:location] || user.location
     user.image_url = params[:image_url] || user.image_url
 
-    if user.save
+    if user.id == current_user.id && user.save
       render json: user
     else
       render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
@@ -39,8 +41,12 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find(params[:id])
-    user.destroy
-    render json: {message: "User Successfully Destroyed."}
+    if user.id == current_user.id
+      user.destroy
+      render json: {message: "User Successfully Destroyed."}
+    else
+      render json: {message: "cannot delete other users"}
+    end
   end
 
 end
