@@ -27,21 +27,26 @@ class PostsController < ApplicationController
   def show
     post = Post.find(params[:id])
 
-    render json: post
+    render json: post, include: "comments.user"
   end
 
   def update
-
     post = Post.find(params[:id])
 
-    post.title = params[:title] || post.title
-    post.body = params[:body] || post.body
-    post.image_url = params[:image_url] || post.image_url
+    if post.user_id == current_user.id
+      
 
-    if post.user_id == current_user.id && post.save
-      render json: post
+      post.title = params[:title] || post.title
+      post.body = params[:body] || post.body
+      post.image_url = params[:image_url] || post.image_url
+
+      if post.save
+        render json: post
+      else
+        render json: {errors: post.errors.full_messages}, status: :unprocessable_entity
+      end
     else
-      render json: {errors: post.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: "Not authorized"}, status: :unauthorized
     end
     
   end
@@ -52,7 +57,7 @@ class PostsController < ApplicationController
       post.destroy
       render json: {message: "Post successfully destroyed."}
     else
-      render json: {message: "Cannot delete post that isn't yours."}
+      render json: {message: "Cannot delete post that isn't yours."}, status: :unauthorized
     end
   end
 

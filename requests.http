@@ -1,10 +1,12 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUzMDI3NTR9._4tR8N-lRq9VRsnMVPa65bd54WjejhnOWhQpWWD_r40
+
 ### SESSION CREATE
 
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "laura@gmail.com",
+  "email": "zia@gmail.com",
   "password": "password"
 }
 
@@ -13,21 +15,22 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "test",
-  "email": "test@gmail.com",
-  "location": "test location",
+  "name": "laura",
+  "email": "laura@gmail.com",
+  "location": "laura location",
   "password": "password",
   "password_confirmation": "password",
-  "image_url": "testphoto.jpg"
+  "image_url": "lauraphoto.jpg"
 }
 
 ###USER SHOW
 GET http://localhost:3000/users/3
+Authorization: Bearer {{jwt}}
 
 ###USER UPDATE
-PATCH http://localhost:3000/users/6
+PATCH http://localhost:3000/users/me
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUxMTU2ODR9.DSbaBDrxGVgaRnEk7NCD5hp8gz_XvgyCazPgb4yi-Nw
+Authorization: Bearer {{jwt}}
 
 {
   "name": "test update",
@@ -35,16 +38,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUxMTU2O
 }
 
 ###USER DESTROY
-DELETE http://localhost:3000/users/6
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MzUxMTU1MjJ9.9ys6XmNgu_mHomNzIK4Apwr_SlGr90abO3Rdwva-QFM
+DELETE http://localhost:3000/users/me
+Authorization: Bearer {{jwt}}
 
-###CATEGORY CREATE
-POST http://localhost:3000/categories
+###CATEGORY index
+GET http://localhost:3000/categories
 Content-Type: application/json
-
-{
-  "name": "Test Category"
-}
 
 ###CATEGORY SHOW
 GET http://localhost:3000/categories/1
@@ -55,36 +54,35 @@ GET http://localhost:3000/posts
 ###POSTS CREATE
 POST http://localhost:3000/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUxMTU2ODR9.DSbaBDrxGVgaRnEk7NCD5hp8gz_XvgyCazPgb4yi-Nw
+Authorization: Bearer {{jwt}}
 
 {
-  "title": "test title",
-  "body": "test body",
+  "title": "Bringing plants indoors for the winter",
+  "body": "How to give them castile soap baths",
   "image_url": "image.jpeg",
   "category_id": 1
 }
 
 ###POSTS SHOW
-GET http://localhost:3000/posts/1
+GET http://localhost:3000/posts/3
 
 ###POSTS UPDATE
-PATCH http://localhost:3000/posts/6
+PATCH http://localhost:3000/posts/3
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUxMTU2ODR9.DSbaBDrxGVgaRnEk7NCD5hp8gz_XvgyCazPgb4yi-Nw
+Authorization: Bearer {{jwt}}
 
 {
-  "title": "update test",
-  "body": "update test"
+  "title": "Beekeeping in Wisconsin"
 }
 
 ###POSTS DESTROY
-DELETE http://localhost:3000/posts/5
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MzUxMTU1MjJ9.9ys6XmNgu_mHomNzIK4Apwr_SlGr90abO3Rdwva-QFM
+DELETE http://localhost:3000/posts/6
+Authorization: Bearer {{jwt}}
 
 ###COMMENTS CREATE
 POST http://localhost:3000/comments
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer {{jwt}}
 
 {
   "body": "comment comment comment",
@@ -93,9 +91,9 @@ Authorization: Bearer
 }
 
 ###COMMENTS UPDATE
-PATCH http://localhost:3000/comments/4
+PATCH http://localhost:3000/comments/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUxMTYyMjl9.5Qw_qSAC8cKKVrVarOQsOzN-Nv_K33lcelTJOWoA4JA
+Authorization: Bearer {{jwt}}
 
 {
   "body": "update comment test",
@@ -103,8 +101,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUxMTYyM
 }
 
 ###DELETE COMMENT
-DELETE http://localhost:3000/comments/3
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUxMTYyMjl9.5Qw_qSAC8cKKVrVarOQsOzN-Nv_K33lcelTJOWoA4JA
+DELETE http://localhost:3000/comments/7
+Authorization: Bearer {{jwt}}
 
 ###MEETUP INDEX
 GET http://localhost:3000/meetups

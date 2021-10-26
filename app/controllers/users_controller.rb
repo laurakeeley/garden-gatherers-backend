@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       image_url: params[:image_url]
     )
     if user.save
-      render json: { message: "User created successfully" }, status: :created
+      render json: user, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
@@ -25,14 +25,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
+    user = current_user
 
     user.name = params[:name] || user.name
     user.email = params[:email] || user.email
     user.location = params[:location] || user.location
     user.image_url = params[:image_url] || user.image_url
 
-    if user.id == current_user.id && user.save
+    if user.save
       render json: user
     else
       render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
@@ -40,13 +40,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
-    if user.id == current_user.id
-      user.destroy
-      render json: {message: "User Successfully Destroyed."}
-    else
-      render json: {message: "cannot delete other users"}
-    end
+    user = current_user
+    user.destroy
+    render json: {message: "User Successfully Destroyed."}
   end
 
 end

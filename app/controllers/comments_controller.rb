@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_user
 
   def create
     comment = Comment.new(
@@ -19,14 +19,18 @@ class CommentsController < ApplicationController
 
   def update
     comment = Comment.find(params[:id])
+    if comment.user_id == current_user.id 
 
-    comment.body = params[:body] || comment.body
-    comment.image_url = params[:image_url] || comment.image_url
+      comment.body = params[:body] || comment.body
+      comment.image_url = params[:image_url] || comment.image_url
 
-    if comment.user_id == current_user.id && comment.save
-      render json: comment
+      if comment.save
+        render json: comment
+      else
+        render json: {errors: comment.errors.full_messages}, status: :unprocessable_entity
+      end
     else
-      render json: {errors: comment.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: "Not authorized"}, status: :unauthorized
     end
   end
 
@@ -35,7 +39,7 @@ class CommentsController < ApplicationController
     if comment.user_id == current_user.id && comment.destroy
       render json: {message: "comment successfully destroyed."}
     else
-      render json: {errors: comment.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: "Unauthorized"}, status: :unauthorized
     end
   end
 end
