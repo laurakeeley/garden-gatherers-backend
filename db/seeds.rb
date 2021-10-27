@@ -35,9 +35,9 @@ Post.create!([
 
 Comment.create!([
   {body: "Why does putting leaves over your garden help? What time of year should I start doing this?", post_id: 1, user_id: 3, image_url: nil},
-  {body: "Natursiums are my favorite! I'm not sure their a perrennial though.", post_id: 4, user_id: 5, image_url: "https://unsplash.com/photos/YlXvFvfybao"},
-  {body: "How do I harvest honey?", post_id: 3, user_id: 4, image_url: "https://unsplash.com/photos/YlXvFvfybao"},
-  {body: "update comment test", post_id: 1, user_id: 2, image_url: "testimageupdate.jpg"}
+  {body: "Natursiums are my favorite! I'm not sure they're a perennial though.", post_id: 2, user_id: 3, image_url: "https://media.istockphoto.com/photos/nasturtium-picture-id636713072?b=1&k=20&m=636713072&s=170667a&w=0&h=qZXDmf1kg3zKvZKvB9ZQOrvojLk-3Rii0SCK1ts_49g="},
+  {body: "How do I harvest honey?", post_id: 2, user_id: 4, image_url: "https://unsplash.com/photos/YlXvFvfybaohttps://media.istockphoto.com/photos/inside-the-beehive-picture-id157311708?b=1&k=20&m=157311708&s=170667a&w=0&h=V8E8CD3aacxHVg3bKTw78xTyEQZt5L5eC-JyGNy2_LI="},
+  {body: "What happens to bees in the winter?", post_id: 4, user_id: 1, image_url: "https://media.istockphoto.com/photos/bee-hives-in-the-winter-organic-bee-farm-picture-id1217360093?b=1&k=20&m=1217360093&s=170667a&w=0&h=XJBD92nyURnuyEMhQMGNhCJlr4uafYFw4hA-1pXm3w0="}
 ])
 
 Meetup.create!([
