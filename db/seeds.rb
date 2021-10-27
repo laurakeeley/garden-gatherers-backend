@@ -43,8 +43,5 @@ Comment.create!([
 Meetup.create!([
   {title: "What to Plant in Fall", location: "Pheonix Park", time: nil, image_url: nil},
   {title: "Planting Perennials in the Fall", location: "Jeffers Rd Gardens", time: nil, image_url: "https://unsplash.com/photos/eL4ADAsiOR8"},
-  {title: "What to Plant in Fall", location: "Pheonix Park", time: nil, image_url: nil},
-  {title: "Planting Perennials in the Fall", location: "Jeffers Rd Gardens", time: nil, image_url: "https://unsplash.com/photos/eL4ADAsiOR8"},
-  {title: "What to Plant in Fall", location: "Pheonix Park", time: nil, image_url: nil},
-  {title: "Planting Perennials in the Fall", location: "Jeffers Rd Gardens", time: nil, image_url: "https://unsplash.com/photos/eL4ADAsiOR8"},
+  {title: "Beekeeping in Eau Claire", location: "Truax Garden", time: nil, image_url: "https://media.istockphoto.com/photos/bee-on-dandelion-picture-id94394792?b=1&k=20&m=94394792&s=170667a&w=0&h=9CsUhumKyjlJEPHLBVn5Uec0pniZED_0ynzyzAgUXco="},
 ])
