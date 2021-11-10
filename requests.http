@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUzMDI3NTR9._4tR8N-lRq9VRsnMVPa65bd54WjejhnOWhQpWWD_r40
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzY0MTI5NTV9._G4GnhiVlIcWuAgqV-v6I1oxXn41qrxzOLWcJ3CDhx4
 
 ### SESSION CREATE
 
@@ -24,7 +24,7 @@ Content-Type: application/json
 }
 
 ###USER SHOW
-GET http://localhost:3000/users/3
+GET http://localhost:3000/users/1
 Authorization: Bearer {{jwt}}
 
 ###USER UPDATE
@@ -64,7 +64,7 @@ Authorization: Bearer {{jwt}}
 }
 
 ###POSTS SHOW
-GET http://localhost:3000/posts/3
+GET http://localhost:3000/posts/1
 
 ###POSTS UPDATE
 PATCH http://localhost:3000/posts/3
@@ -127,8 +127,7 @@ Content-Type: application/json
 Authorization: Bearer 
 
 {
-  "title": "update test",
-  "location": "update test"
+  "time": "2021-12-01T19:30:00.000Z"
 }
 
 ###MEETUP DESTROY
