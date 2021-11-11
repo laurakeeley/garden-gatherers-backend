@@ -1,7 +1,7 @@
 class MeetupsController < ApplicationController
 
   def index
-    meetups = Meetup.all
+    meetups = Meetup.all.order(time: :asc)
 
     render json: meetups
   end

@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzY0MTI5NTV9._G4GnhiVlIcWuAgqV-v6I1oxXn41qrxzOLWcJ3CDhx4
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzY3MzM5NTJ9.Ul8fBqb0iYM-VDNSAmm4PbsjtzZKlPo9S12MJZixUhk
 
 ### SESSION CREATE
 
@@ -64,10 +64,10 @@ Authorization: Bearer {{jwt}}
 }
 
 ###POSTS SHOW
-GET http://localhost:3000/posts/1
+GET http://localhost:3000/posts/14
 
 ###POSTS UPDATE
-PATCH http://localhost:3000/posts/3
+PATCH http://localhost:3000/posts/14
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
@@ -119,7 +119,7 @@ Authorization: Bearer
 }
 
 ###MEETUP SHOW
-GET http://localhost:3000/meetups/2
+GET http://localhost:3000/meetups/1
 
 ###MEETUP UPDATE
 PATCH http://localhost:3000/meetups/2
@@ -127,7 +127,7 @@ Content-Type: application/json
 Authorization: Bearer 
 
 {
-  "info": "Test info for meetups"
+  "info": "Green pepper cranberry spritzer chai tea creamy cauliflower alfredo sauce naga viper portobello mushrooms figs green grapes kimchi alfalfa sprouts creamiest roasted brussel sprouts coconut sugar. Frosted gingerbread bites heat banana bread bite sized entree winter ginger carrot spiced juice red pepper peaches hummus falafel bowl eating together mint lime taco salsa strawberry spinach salad. Overflowing Sicilian pistachio pesto cauliflower spicy main course red grapes samosa appetizer mangos fiery fruit blueberry chia seed jam avocado basil pesto mediterranean avocado dressing drizzle peanut butter rich coconut cream. Bananas mocha chocolate spring peppermint double dark chocolate cherry bomb pepper grains Malaysian chocolate kale caesar salad strawberries parsley dessert potato."
 }
 
 ###MEETUP DESTROY
