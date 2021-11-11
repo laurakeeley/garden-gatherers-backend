@@ -15,12 +15,12 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "laura",
-  "email": "laura@gmail.com",
-  "location": "laura location",
+  "name": "bella",
+  "email": "bella@gmail.com",
+  "location": "Altoona, WI",
   "password": "password",
   "password_confirmation": "password",
-  "image_url": "lauraphoto.jpg"
+  "image_url": "https://images.pexels.com/photos/4276936/pexels-photo-4276936.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
 }
 
 ###USER SHOW
@@ -119,7 +119,7 @@ Authorization: Bearer
 }
 
 ###MEETUP SHOW
-GET http://localhost:3000/meetups/1
+GET http://localhost:3000/meetups/2
 
 ###MEETUP UPDATE
 PATCH http://localhost:3000/meetups/2
@@ -127,7 +127,7 @@ Content-Type: application/json
 Authorization: Bearer 
 
 {
-  "time": "2021-12-01T19:30:00.000Z"
+  "info": "Test info for meetups"
 }
 
 ###MEETUP DESTROY

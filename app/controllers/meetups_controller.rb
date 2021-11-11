@@ -11,7 +11,8 @@ class MeetupsController < ApplicationController
       title: params[:title],
       location: params[:location],
       image_url: params[:image_url],
-      time: params[:time]
+      time: params[:time],
+      info: params[:info]
     )
 
     if meetup.save
@@ -35,6 +36,7 @@ class MeetupsController < ApplicationController
     meetup.location = params[:location] || meetup.location
     meetup.image_url = params[:image_url] || meetup.image_url
     meetup.time = params[:time] || meetup.time
+    meetup.info = params[:info] || meetup.info
 
     if meetup.save
       render json: meetup
