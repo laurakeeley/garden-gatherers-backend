@@ -1,24 +1,47 @@
-# README
+# Garden Gatherers Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Basic Overview
 
-Things you may want to cover:
+This is the backend code for a web app I created called Garden Gatherers. You can see the deployed web app [here](https://gardengatherers.netlify.app/). This backend code is deployed and can be found [here](https://gardengatherers.heroku.com/categories)
 
-* Ruby version
+Garden Gatherers is a web app to bring local gardeners together instead of using paper and word-of-mouth. Users of this web app can create blog-style posts under different categories while also leaving comments and questions on posts to learn and interact. There is also a page to find meetups of local gardeners to get together and learn from one another.
 
-* System dependencies
+##### Prerequisites
 
-* Configuration
+The setups steps expect following tools installed on the system.
 
-* Database creation
+- Ruby [3.0.1]
+- Rails [6.1.4]
 
-* Database initialization
+##### 1. Check out the repository
 
-* How to run the test suite
+```bash
+git clone git@github.com:laurakeeley/garden-gatherers-backend.git
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+##### 2. Install dependencies
 
-* Deployment instructions
+Copy the sample database.yml file and edit the database configuration as required.
 
-* ...
+```ruby
+bundle install
+```
+
+##### 3. Create and setup the database
+
+Run the following commands to create and setup the database.
+
+```ruby
+bundle exec rake db:create
+bundle exec rake db:setup
+```
+
+##### 4. Start the Rails server
+
+You can start the rails server using the command given below.
+
+```ruby
+bundle exec rails s
+```
+
+And now you can visit the site with the URL [http://localhost:3000]http://localhost:3000
