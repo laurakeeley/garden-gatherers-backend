@@ -2,18 +2,18 @@
 
 ## Basic Overview
 
-This is the backend code for a web app I created called Garden Gatherers. You can see the deployed web app [here](https://gardengatherers.netlify.app/). This backend code is deployed and can be found [here](https://gardengatherers.heroku.com/categories)
+This is the backend code for a web app I created called Garden Gatherers. You can see the deployed web app [here](https://gardengatherers.netlify.app/). This backend code is deployed and can be found [here](https://gardengatherers.heroku.com/categories).
 
 Garden Gatherers is a web app to bring local gardeners together instead of using paper and word-of-mouth. Users of this web app can create blog-style posts under different categories while also leaving comments and questions on posts to learn and interact. There is also a page to find meetups of local gardeners to get together and learn from one another.
 
-##### Prerequisites
+#### Prerequisites
 
 The setups steps expect following tools installed on the system.
 
 - Ruby [3.0.1]
 - Rails [6.1.4]
 
-##### 1. Check out the repository
+##### 1. Clone the repository
 
 ```bash
 git clone git@github.com:laurakeeley/garden-gatherers-backend.git
